@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Change LowerCase to UpperCase and vice-versa</title>
+</head>
+<body>
+	<h2>Enter a string</h2>
+	<input type="text" id="r"/><br><br>
+	<input type = "button" onclick = "CaseChange()" value = "result"/><br><br>
+	<div id="res"></div>
+	<script>
+	function CaseChange()
+	{
+		var str = document.getElementById("r").value;
+		var ln = str.length;
+		var s="";
+		for (var i = 0; i < ln; i++)
+		{
+			if (str[i] >= 'a' && str[i] <= 'z')
+			{
+				s+=String.fromCharCode(str.charCodeAt(i) - 32);
+			}
+			else if (str[i] >= 'A' && str[i] <= 'Z')
+			{
+				s+=String.fromCharCode(str.charCodeAt(i) + 32);
+			}
+		}
+		document.getElementById("res").innerHTML=s;
+	}
+	</script>
+</body>
+</html>
